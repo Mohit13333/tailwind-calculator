@@ -782,6 +782,14 @@ video {
 }
 
 @media (min-width: 640px) {
+  .sm\:mb-\[20\%\] {
+    margin-bottom: 20%;
+  }
+
+  .sm\:mb-\[10\%\] {
+    margin-bottom: 10%;
+  }
+
   .sm\:h-1\/2 {
     height: 50%;
   }
@@ -800,6 +808,14 @@ video {
 }
 
 @media (min-width: 768px) {
+  .md\:mb-\[1px\] {
+    margin-bottom: 1px;
+  }
+
+  .md\:mb-\[10px\] {
+    margin-bottom: 10px;
+  }
+
   .md\:h-auto {
     height: auto;
   }
