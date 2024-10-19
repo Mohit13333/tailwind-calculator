@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./output.css">
+    <link rel="icon" href="./calc.webp">
+    <title>Calculator</title>
+</head>
+<body class="bg-slate-900 sm:h-svh md:h-screen m-auto flex flex-col justify-end sm:items-start md:items-center">
+    <div class="bg-slate-800 p-4 rounded-lg sm:w-svw mb-[10px] md:w-auto shadow-xl">
+        <table class="sm:w-svw md:w-auto  max-h-svh">
+            <tr>
+                <td colspan="4">
+                    <input id="display" type="text" class="w-svw md:w-auto text-right bg-zinc-700 text-white p-4 rounded-lg shadow-md" size="70" readonly />
+                </td>
+            </tr>
+            <tr>
+                <td><input class="bg-orange-700 cursor-pointer p-5 w-[70px] text-white rounded-full text-xl" type="button" value="AC" id="clearDisplay" /></td>
+                <td><input class="bg-orange-700 cursor-pointer p-5 w-[70px] text-white rounded-full text-xl" type="button" value="DEL" id="deleteDisplay" /></td>
+                <td><input class="bg-black cursor-pointer p-5 w-[70px] text-white rounded-full text-xl" type="button" value="%" id="percentBtn" /></td>
+                <td><input class="bg-orange-700 cursor-pointer p-5 w-[70px] text-white rounded-full text-xl" type="button" value="/" id="divideBtn" /></td>
+            </tr>
+            <tr>
+                <td><input class="bg-black cursor-pointer p-5 w-[70px] text-white rounded-full text-xl" type="button" value="7" id="sevenBtn" /></td>
+                <td><input class="bg-black cursor-pointer p-5 w-[70px] text-white rounded-full text-xl" type="button" value="8" id="eightBtn" /></td>
+                <td><input class="bg-black cursor-pointer p-5 w-[70px] text-white rounded-full text-xl" type="button" value="9" id="nineBtn" /></td>
+                <td><input class="bg-orange-700 cursor-pointer p-5 w-[70px] text-white rounded-full text-xl" type="button" value="*" id="multiplyBtn" /></td>
+            </tr>
+            <tr>
+                <td><input class="bg-black cursor-pointer p-5 w-[70px] text-white rounded-full text-xl" type="button" value="4" id="fourBtn" /></td>
+                <td><input class="bg-black cursor-pointer p-5 w-[70px] text-white rounded-full text-xl" type="button" value="5" id="fiveBtn" /></td>
+                <td><input class="bg-black cursor-pointer p-5 w-[70px] text-white rounded-full text-xl" type="button" value="6" id="sixBtn" /></td>
+                <td><input class="bg-orange-700 cursor-pointer p-5 w-[70px] text-white rounded-full text-xl" type="button" value="-" id="subtractBtn" /></td>
+            </tr>
+            <tr>
+                <td><input class="bg-black cursor-pointer p-5 w-[70px] text-white rounded-full text-xl" type="button" value="1" id="oneBtn" /></td>
+                <td><input class="bg-black cursor-pointer p-5 w-[70px] text-white rounded-full text-xl" type="button" value="2" id="twoBtn" /></td>
+                <td><input class="bg-black cursor-pointer p-5 w-[70px] text-white rounded-full text-xl" type="button" value="3" id="threeBtn" /></td>
+                <td><input class="bg-orange-700 cursor-pointer p-5 w-[70px] text-white rounded-full text-xl" type="button" value="+" id="addBtn" /></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input class="bg-black cursor-pointer w-full p-5 text-white rounded-full text-xl" type="button" value="0" id="zeroBtn" /></td>
+                <td><input class="bg-black cursor-pointer p-5 w-[70px] text-white rounded-full text-xl" type="button" value="." id="dotBtn" /></td>
+                <td><input class="bg-orange-700 cursor-pointer p-5 w-[70px] text-white rounded-full text-xl" type="button" value="=" id="equalBtn" /></td>
+            </tr>
+        </table>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
