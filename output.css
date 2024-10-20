@@ -594,6 +594,10 @@ video {
   height: 92.3vh;
 }
 
+.h-\[92vh\] {
+  height: 92vh;
+}
+
 .w-full {
   width: 100%;
 }
