@@ -6,46 +6,33 @@
     <link rel="stylesheet" href="./output.css">
     <title>Calculator</title>
     <style>
-        .button {
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            transition: all 0.2s ease-in-out;
-        }
-        .button:hover {
-            opacity: 0.8;
-            transform: translateY(-5px);
-        }
-        .button-orange {
-            background-color: #FF9500;
-        }
-        .button-dark {
-            background-color: #1C1C1E;
-        }
-
-        /* Mobile specific height: roughly half screen */
         @media (max-width: 768px) {
             .calculator-container{
-                height: auto; /* Half of mobile screen height */
-                width: 100%; /* Full mobile width */
+                height: auto;
+                width: 100%; 
             }
         }
         @media (max-width: 768px) {
             .calc{
-                height: auto; /* Half of mobile screen height */
-                width: 100%; /* Full mobile width */
+                height: 92.3vh;
+                width: 100%; 
+                display:flex;
+                align-items: flex-end;
+                margin-bottom: 10px;
             }
         }
 
-        /* Desktop specific height and width */
+       
         @media (min-width: 769px) {
             .calculator-container{
-                height: auto; /* Auto height on desktop */
-                width: 50%; /* Half desktop screen width */
+                height: auto; 
+                width: 50%; 
             }
         }
         @media (min-width: 769px) {
             .calc{
-                height: auto; /* Auto height on desktop */
-                width: 50%; /* Half desktop screen width */
+                height: auto;
+                width: 50%; 
             }
         }
     </style>
@@ -59,33 +46,33 @@
                 </td>
             </tr>
             <tr>
-                <td><input class="button button-orange cursor-pointer p-[28px] m-[8px] text-white rounded-lg text-xl" type="button" value="AC" id="clearDisplay" /></td>
-                <td><input class="button button-orange cursor-pointer p-[28px] m-[8px] text-white rounded-lg text-xl" type="button" value="DEL" id="deleteDisplay" /></td>
-                <td><input class="button button-dark cursor-pointer p-[28px] m-[8px] text-white rounded-lg text-xl" type="button" value="%" id="percentBtn" /></td>
-                <td><input class="button button-orange cursor-pointer p-[28px] m-[8px] text-white rounded-lg text-xl" type="button" value="/" id="divideBtn" /></td>
+                <td><input class="bg-orange-600 cursor-pointer p-[28px] m-[2px] text-white rounded-lg text-xl" type="button" value="AC" id="clearDisplay" /></td>
+                <td><input class="bg-orange-600 cursor-pointer p-[28px] m-[2px] text-white rounded-lg text-xl" type="button" value="DEL" id="deleteDisplay" /></td>
+                <td><input class="bg-black cursor-pointer p-[28px] m-[2px] text-white rounded-lg text-xl" type="button" value="%" id="percentBtn" /></td>
+                <td><input class="bg-orange-600 cursor-pointer p-[28px] m-[2px] text-white rounded-lg text-xl" type="button" value="/" id="divideBtn" /></td>
             </tr>
             <tr>
-                <td><input class="button button-dark cursor-pointer p-[28px] m-[8px] text-white rounded-lg text-xl" type="button" value="7" id="sevenBtn" /></td>
-                <td><input class="button button-dark cursor-pointer p-[28px] m-[8px] text-white rounded-lg text-xl" type="button" value="8" id="eightBtn" /></td>
-                <td><input class="button button-dark cursor-pointer p-[28px] m-[8px] text-white rounded-lg text-xl" type="button" value="9" id="nineBtn" /></td>
-                <td><input class="button button-orange cursor-pointer p-[28px] m-[8px] text-white rounded-lg text-xl" type="button" value="*" id="multiplyBtn" /></td>
+                <td><input class="bg-black cursor-pointer p-[28px] m-[2px] text-white rounded-lg text-xl" type="button" value="7" id="sevenBtn" /></td>
+                <td><input class="bg-black cursor-pointer p-[28px] m-[2px] text-white rounded-lg text-xl" type="button" value="8" id="eightBtn" /></td>
+                <td><input class="bg-black cursor-pointer p-[28px] m-[2px] text-white rounded-lg text-xl" type="button" value="9" id="nineBtn" /></td>
+                <td><input class="bg-orange-600 cursor-pointer p-[28px] m-[2px] text-white rounded-lg text-xl" type="button" value="*" id="multiplyBtn" /></td>
             </tr>
             <tr>
-                <td><input class="button button-dark cursor-pointer p-[28px] m-[8px] text-white rounded-lg text-xl" type="button" value="4" id="fourBtn" /></td>
-                <td><input class="button button-dark cursor-pointer p-[28px] m-[8px] text-white rounded-lg text-xl" type="button" value="5" id="fiveBtn" /></td>
-                <td><input class="button button-dark cursor-pointer p-[28px] m-[8px] text-white rounded-lg text-xl" type="button" value="6" id="sixBtn" /></td>
-                <td><input class="button button-orange cursor-pointer p-[28px] m-[8px] text-white rounded-lg text-xl" type="button" value="-" id="subtractBtn" /></td>
+                <td><input class="bg-black cursor-pointer p-[28px] m-[2px] text-white rounded-lg text-xl" type="button" value="4" id="fourBtn" /></td>
+                <td><input class="bg-black cursor-pointer p-[28px] m-[2px] text-white rounded-lg text-xl" type="button" value="5" id="fiveBtn" /></td>
+                <td><input class="bg-black cursor-pointer p-[28px] m-[2px] text-white rounded-lg text-xl" type="button" value="6" id="sixBtn" /></td>
+                <td><input class="bg-orange-600 cursor-pointer p-[28px] m-[2px] text-white rounded-lg text-xl" type="button" value="-" id="subtractBtn" /></td>
             </tr>
             <tr>
-                <td><input class="button button-dark cursor-pointer p-[28px] m-[8px] text-white rounded-lg text-xl" type="button" value="1" id="oneBtn" /></td>
-                <td><input class="button button-dark cursor-pointer p-[28px] m-[8px] text-white rounded-lg text-xl" type="button" value="2" id="twoBtn" /></td>
-                <td><input class="button button-dark cursor-pointer p-[28px] m-[8px] text-white rounded-lg text-xl" type="button" value="3" id="threeBtn" /></td>
-                <td><input class="button button-orange cursor-pointer p-[28px] m-[8px] text-white rounded-lg text-xl" type="button" value="+" id="addBtn" /></td>
+                <td><input class="bg-black cursor-pointer p-[28px] m-[2px] text-white rounded-lg text-xl" type="button" value="1" id="oneBtn" /></td>
+                <td><input class="bg-black cursor-pointer p-[28px] m-[2px] text-white rounded-lg text-xl" type="button" value="2" id="twoBtn" /></td>
+                <td><input class="bg-black cursor-pointer p-[28px] m-[2px] text-white rounded-lg text-xl" type="button" value="3" id="threeBtn" /></td>
+                <td><input class="bg-orange-600 cursor-pointer p-[28px] m-[2px] text-white rounded-lg text-xl" type="button" value="+" id="addBtn" /></td>
             </tr>
             <tr>
-                <td colspan="2"><input class="button button-dark cursor-pointer w-full p-[28px] m-[8px] text-white rounded-lg text-xl" type="button" value="0" id="zeroBtn" /></td>
-                <td><input class="button button-dark cursor-pointer p-[28px] m-[8px] text-white rounded-lg text-xl" type="button" value="." id="dotBtn" /></td>
-                <td><input class="button button-orange cursor-pointer p-[28px] m-[8px] text-white rounded-lg text-xl" type="button" value="=" id="equalBtn" /></td>
+                <td colspan="2"><input class="bg-black cursor-pointer w-full p-[28px] m-[2px] text-white rounded-lg text-xl" type="button" value="0" id="zeroBtn" /></td>
+                <td><input class="bg-black cursor-pointer p-[28px] m-[2px] text-white rounded-lg text-xl" type="button" value="." id="dotBtn" /></td>
+                <td><input class="bg-orange-600 cursor-pointer p-[28px] m-[2px] text-white rounded-lg text-xl" type="button" value="=" id="equalBtn" /></td>
             </tr>
         </table>
     </div>
