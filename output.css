@@ -645,6 +645,14 @@ video {
   padding: 30px;
 }
 
+.p-\[28px\] {
+  padding: 28px;
+}
+
+.text-left {
+  text-align: left;
+}
+
 .text-right {
   text-align: right;
 }
