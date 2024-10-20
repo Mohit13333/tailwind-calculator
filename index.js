@@ -38,6 +38,5 @@ const display = document.getElementById('display');
             try {
                 display.value = eval(display.value);
             } catch (err) {
-                alert('Invalid operation');
             }
         }
