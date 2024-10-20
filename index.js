@@ -19,6 +19,8 @@ const display = document.getElementById('display');
         document.getElementById('sevenBtn').addEventListener('click', () => appendToDisplay('7'));
         document.getElementById('eightBtn').addEventListener('click', () => appendToDisplay('8'));
         document.getElementById('nineBtn').addEventListener('click', () => appendToDisplay('9'));
+        document.getElementById('opbracket').addEventListener('click', () => appendToDisplay('('));
+        document.getElementById('clbracket').addEventListener('click', () => appendToDisplay(')'));
 
         function appendToDisplay(value) {
             display.value += value;
@@ -36,6 +38,6 @@ const display = document.getElementById('display');
             try {
                 display.value = eval(display.value);
             } catch (err) {
-              
+                alert('Invalid operation');
             }
         }
