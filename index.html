@@ -2,50 +2,93 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="./output.css">
-    <link rel="icon" href="./calc.webp">
     <title>Calculator</title>
+    <style>
+        .button {
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s ease-in-out;
+        }
+        .button:hover {
+            opacity: 0.8;
+            transform: translateY(-5px);
+        }
+        .button-orange {
+            background-color: #FF9500;
+        }
+        .button-dark {
+            background-color: #1C1C1E;
+        }
+
+        /* Mobile specific height: roughly half screen */
+        @media (max-width: 768px) {
+            .calculator-container{
+                height: auto; /* Half of mobile screen height */
+                width: 100%; /* Full mobile width */
+            }
+        }
+        @media (max-width: 768px) {
+            .calc{
+                height: auto; /* Half of mobile screen height */
+                width: 100%; /* Full mobile width */
+            }
+        }
+
+        /* Desktop specific height and width */
+        @media (min-width: 769px) {
+            .calculator-container{
+                height: auto; /* Auto height on desktop */
+                width: 50%; /* Half desktop screen width */
+            }
+        }
+        @media (min-width: 769px) {
+            .calc{
+                height: auto; /* Auto height on desktop */
+                width: 50%; /* Half desktop screen width */
+            }
+        }
+    </style>
 </head>
-<body class="bg-slate-900 sm:h-screen md:h-svh m-auto flex flex-col justify-end sm:items-start md:items-center">
-    <div class="bg-slate-800 p-4 sm:max-h-svh rounded-lg sm:max-w-[670px] sm:mb-[3%] md:mb-[10px] md:w-auto shadow-xl">
-        <table class="sm:w-svw md:w-auto  sm:min-h-svh md:max-h-svh">
+<body class="bg-slate-900 h-screen flex items-center justify-center">
+    <div class="calculator-container bg-slate-800 p-4 rounded-lg shadow-xl flex flex-col justify-center overflow-hidden">
+        <table class="calc w-full h-full grid grid-cols-4 gap-2">
             <tr>
                 <td colspan="4">
-                    <input id="display" type="text" class="sm:max-w-[640px] md:w-auto text-right bg-zinc-700 text-white p-4 rounded-lg shadow-md" size="70" readonly />
+                    <input id="display" type="text" class="w-full text-right bg-zinc-700 text-white p-4 rounded-lg shadow-md h-16 text-3xl" readonly />
                 </td>
             </tr>
             <tr>
-                <td><input class="bg-orange-700 cursor-pointer p-5 w-[70px] text-white rounded-full text-xl" type="button" value="AC" id="clearDisplay" /></td>
-                <td><input class="bg-orange-700 cursor-pointer p-5 w-[70px] text-white rounded-full text-xl" type="button" value="DEL" id="deleteDisplay" /></td>
-                <td><input class="bg-black cursor-pointer p-5 w-[70px] text-white rounded-full text-xl" type="button" value="%" id="percentBtn" /></td>
-                <td><input class="bg-orange-700 cursor-pointer p-5 w-[70px] text-white rounded-full text-xl" type="button" value="/" id="divideBtn" /></td>
+                <td><input class="button button-orange cursor-pointer p-[30px] m-[8px] text-white rounded-lg text-xl" type="button" value="AC" id="clearDisplay" /></td>
+                <td><input class="button button-orange cursor-pointer p-[30px] m-[8px] text-white rounded-lg text-xl" type="button" value="DEL" id="deleteDisplay" /></td>
+                <td><input class="button button-dark cursor-pointer p-[30px] m-[8px] text-white rounded-lg text-xl" type="button" value="%" id="percentBtn" /></td>
+                <td><input class="button button-orange cursor-pointer p-[30px] m-[8px] text-white rounded-lg text-xl" type="button" value="/" id="divideBtn" /></td>
             </tr>
             <tr>
-                <td><input class="bg-black cursor-pointer p-5 w-[70px] text-white rounded-full text-xl" type="button" value="7" id="sevenBtn" /></td>
-                <td><input class="bg-black cursor-pointer p-5 w-[70px] text-white rounded-full text-xl" type="button" value="8" id="eightBtn" /></td>
-                <td><input class="bg-black cursor-pointer p-5 w-[70px] text-white rounded-full text-xl" type="button" value="9" id="nineBtn" /></td>
-                <td><input class="bg-orange-700 cursor-pointer p-5 w-[70px] text-white rounded-full text-xl" type="button" value="*" id="multiplyBtn" /></td>
+                <td><input class="button button-dark cursor-pointer p-[30px] m-[8px] text-white rounded-lg text-xl" type="button" value="7" id="sevenBtn" /></td>
+                <td><input class="button button-dark cursor-pointer p-[30px] m-[8px] text-white rounded-lg text-xl" type="button" value="8" id="eightBtn" /></td>
+                <td><input class="button button-dark cursor-pointer p-[30px] m-[8px] text-white rounded-lg text-xl" type="button" value="9" id="nineBtn" /></td>
+                <td><input class="button button-orange cursor-pointer p-[30px] m-[8px] text-white rounded-lg text-xl" type="button" value="*" id="multiplyBtn" /></td>
             </tr>
             <tr>
-                <td><input class="bg-black cursor-pointer p-5 w-[70px] text-white rounded-full text-xl" type="button" value="4" id="fourBtn" /></td>
-                <td><input class="bg-black cursor-pointer p-5 w-[70px] text-white rounded-full text-xl" type="button" value="5" id="fiveBtn" /></td>
-                <td><input class="bg-black cursor-pointer p-5 w-[70px] text-white rounded-full text-xl" type="button" value="6" id="sixBtn" /></td>
-                <td><input class="bg-orange-700 cursor-pointer p-5 w-[70px] text-white rounded-full text-xl" type="button" value="-" id="subtractBtn" /></td>
+                <td><input class="button button-dark cursor-pointer p-[30px] m-[8px] text-white rounded-lg text-xl" type="button" value="4" id="fourBtn" /></td>
+                <td><input class="button button-dark cursor-pointer p-[30px] m-[8px] text-white rounded-lg text-xl" type="button" value="5" id="fiveBtn" /></td>
+                <td><input class="button button-dark cursor-pointer p-[30px] m-[8px] text-white rounded-lg text-xl" type="button" value="6" id="sixBtn" /></td>
+                <td><input class="button button-orange cursor-pointer p-[30px] m-[8px] text-white rounded-lg text-xl" type="button" value="-" id="subtractBtn" /></td>
             </tr>
             <tr>
-                <td><input class="bg-black cursor-pointer p-5 w-[70px] text-white rounded-full text-xl" type="button" value="1" id="oneBtn" /></td>
-                <td><input class="bg-black cursor-pointer p-5 w-[70px] text-white rounded-full text-xl" type="button" value="2" id="twoBtn" /></td>
-                <td><input class="bg-black cursor-pointer p-5 w-[70px] text-white rounded-full text-xl" type="button" value="3" id="threeBtn" /></td>
-                <td><input class="bg-orange-700 cursor-pointer p-5 w-[70px] text-white rounded-full text-xl" type="button" value="+" id="addBtn" /></td>
+                <td><input class="button button-dark cursor-pointer p-[30px] m-[8px] text-white rounded-lg text-xl" type="button" value="1" id="oneBtn" /></td>
+                <td><input class="button button-dark cursor-pointer p-[30px] m-[8px] text-white rounded-lg text-xl" type="button" value="2" id="twoBtn" /></td>
+                <td><input class="button button-dark cursor-pointer p-[30px] m-[8px] text-white rounded-lg text-xl" type="button" value="3" id="threeBtn" /></td>
+                <td><input class="button button-orange cursor-pointer p-[30px] m-[8px] text-white rounded-lg text-xl" type="button" value="+" id="addBtn" /></td>
             </tr>
             <tr>
-                <td colspan="2"><input class="bg-black cursor-pointer w-full p-5 text-white rounded-full text-xl" type="button" value="0" id="zeroBtn" /></td>
-                <td><input class="bg-black cursor-pointer p-5 w-[70px] text-white rounded-full text-xl" type="button" value="." id="dotBtn" /></td>
-                <td><input class="bg-orange-700 cursor-pointer p-5 w-[70px] text-white rounded-full text-xl" type="button" value="=" id="equalBtn" /></td>
+                <td colspan="2"><input class="button button-dark cursor-pointer w-full p-[30px] m-[8px] text-white rounded-lg text-xl" type="button" value="0" id="zeroBtn" /></td>
+                <td><input class="button button-dark cursor-pointer p-[30px] m-[8px] text-white rounded-lg text-xl" type="button" value="." id="dotBtn" /></td>
+                <td><input class="button button-orange cursor-pointer p-[30px] m-[8px] text-white rounded-lg text-xl" type="button" value="=" id="equalBtn" /></td>
             </tr>
         </table>
     </div>
-    <script src="index.js"></script>
+<script src="index.js"></script>
 </body>
 </html>
