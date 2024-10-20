@@ -694,6 +694,22 @@ video {
     max-width: 620px;
   }
 
+  .sm\:max-w-\[650px\] {
+    max-width: 650px;
+  }
+
+  .sm\:max-w-\[655px\] {
+    max-width: 655px;
+  }
+
+  .sm\:max-w-\[660px\] {
+    max-width: 660px;
+  }
+
+  .sm\:max-w-\[670px\] {
+    max-width: 670px;
+  }
+
   .sm\:items-start {
     align-items: flex-start;
   }
@@ -706,6 +722,10 @@ video {
 
   .md\:h-screen {
     height: 100vh;
+  }
+
+  .md\:h-svh {
+    height: 100svh;
   }
 
   .md\:max-h-svh {
